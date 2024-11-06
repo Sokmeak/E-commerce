@@ -10,52 +10,34 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 import PromotionBanner from "@/Components/PromotionBanner.vue";
 export default {
   components: { PromotionBanner },
   data() {
     return {
-      promotions: [
-        {
-          title: "Everyday Fresh & Clean with Our Products",
-          image: "./public/images/OnionNew.png",
-          color: "#F0E8D5",
-          buttonColor: "#36b37e",
-          url: "https://www.google.com",
-        },
-        {
-          title: "Make your Breakfast Healthy and Easy",
-          
-          image: "./public/images/myStraw.png",
-          color: "#F3E8E8",
-          buttonColor: "#36b37e",
-          url: "https://www.google.com",
-        },
-        {
-          title: "The best Organic Products Online",
-         
-          image: "./public/images/allveg.png",
-          color: "#E7EAF3",
-          buttonColor: "#FDC040",
-          url: "https://www.google.com",
-        },
-      ],
-
-      //  promotions: [],
+      promotions: [],
     };
   },
 
-  // async mounted() {
-  //   try {
-  //     const response = await fetch("http://localhost:3000/api/promotions");
-  //     const data = await response.json(); // Parse JSON data
-  //     this.promotions = data; // Assign data to products array
-  //     console.log("Fetched categories:", data);
-  //     alert("Data fetched successfully");
-  //   } catch (error) {
-  //     console.error("Error fetching promotions:", error);
-  //   }
-  // },
+  methods: {
+    fetchPromotion() {
+      axios
+        .get("http://localhost:3000/api/promotions")
+        .then((response) => {
+          console.log(response.data); // Access the data
+
+          this.promotions = response.data;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    },
+  },
+
+  async mounted() {
+    this.fetchPromotion();
+  },
 };
 </script>
 

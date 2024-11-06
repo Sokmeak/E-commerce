@@ -1,6 +1,6 @@
 <template>
-  <div  :style = "{backgroundColor: color}" class="product-category">
-    <img :src="image" :alt="name" class="product-image" />
+  <div  :style = "{backgroundColor: color} " class="product-category">
+    <img :src="image" :alt="name" class="product-image" @mouseenter="HoverMouse" />
     <h3>{{ name }}</h3>
     <p >
       {{ productCount }} items
@@ -15,7 +15,13 @@ export default {
     productCount: Number,
     image: String,
     color: String,
+    borderColor: String,
   },
+  methods:{
+    HoverMouse(){
+      // scale images and show it border...
+    }
+  }
 
  
 };
