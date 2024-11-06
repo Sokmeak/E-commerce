@@ -1,14 +1,12 @@
 <template>
   <div class="promotion-banner-list">
     <PromotionBanner
-      v-for="(banner, index) in banners"
+      v-for="(promote, index) in promotions"
       :key="index"
-      :title="banner.title"
-      :description="banner.description"
-      :imageSrc="banner.imageSrc"
-      :bgColor="banner.bgColor"
-      :bgBtnColor="banner.bgBtnColor"
-      :label="banner.label" />
+      :title="promote.title"
+      :image="promote.image"
+      :color="promote.color"
+      :buttonColor="promote.buttonColor" />
   </div>
 </template>
 <script>
@@ -17,35 +15,47 @@ export default {
   components: { PromotionBanner },
   data() {
     return {
-      banners: [
+      promotions: [
         {
           title: "Everyday Fresh & Clean with Our Products",
-          description: "Try it!",
-          imageSrc: "./public/images/OnionNew.png",
-          bgColor: "#F0E8D5",
-          bgBtnColor: "#36b37e",
-          label: "Shop Now",
+          image: "./public/images/OnionNew.png",
+          color: "#F0E8D5",
+          buttonColor: "#36b37e",
+          url: "https://www.google.com",
         },
         {
           title: "Make your Breakfast Healthy and Easy",
-          description: "Try it!",
-          imageSrc: "./public/images/myStraw.png",
-
-          bgColor: "#F3E8E8",
-          bgBtnColor: "#36b37e",
-          label: "Shop Now",
+          
+          image: "./public/images/myStraw.png",
+          color: "#F3E8E8",
+          buttonColor: "#36b37e",
+          url: "https://www.google.com",
         },
         {
           title: "The best Organic Products Online",
-          description: "Try it!",
-          imageSrc: "./public/images/allveg.png",
-          bgColor: "#E7EAF3",
-          bgBtnColor: "#FDC040",
-          label: "Shop Now",
+         
+          image: "./public/images/allveg.png",
+          color: "#E7EAF3",
+          buttonColor: "#FDC040",
+          url: "https://www.google.com",
         },
       ],
+
+      //  promotions: [],
     };
   },
+
+  // async mounted() {
+  //   try {
+  //     const response = await fetch("http://localhost:3000/api/promotions");
+  //     const data = await response.json(); // Parse JSON data
+  //     this.promotions = data; // Assign data to products array
+  //     console.log("Fetched categories:", data);
+  //     alert("Data fetched successfully");
+  //   } catch (error) {
+  //     console.error("Error fetching promotions:", error);
+  //   }
+  // },
 };
 </script>
 
@@ -54,8 +64,5 @@ export default {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  /* justify-content: space-around; */
-  /* padding: 20px; */
-  /* background-color: #f0f2f5; */
 }
 </style>
