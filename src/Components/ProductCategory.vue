@@ -3,7 +3,7 @@
     <img :src="image" :alt="name" class="product-image" />
     <h3>{{ name }}</h3>
     <p >
-      {{ items }} items
+      {{ productCount }} items
     </p>
   </div>
 </template>
@@ -29,7 +29,6 @@ export default {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 1000;
- 
   flex-direction: column;
   justify-content: center;
   align-items: center;

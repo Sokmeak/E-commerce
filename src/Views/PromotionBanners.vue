@@ -1,12 +1,12 @@
 <template>
   <div class="promotion-banner-list">
     <PromotionBanner
-      v-for="(banner, index) in promotions"
+      v-for="(promote, index) in promotions"
       :key="index"
-      :title="banner.title"
-      :image="banner.image"
-      :color="banner.color"
-      :buttonColor="banner.buttonColor" />
+      :title="promote.title"
+      :image="promote.image"
+      :color="promote.color"
+      :buttonColor="promote.buttonColor" />
   </div>
 </template>
 <script>
@@ -25,7 +25,7 @@ export default {
         },
         {
           title: "Make your Breakfast Healthy and Easy",
-          description: "Try it!",
+          
           image: "./public/images/myStraw.png",
           color: "#F3E8E8",
           buttonColor: "#36b37e",
@@ -33,15 +33,29 @@ export default {
         },
         {
           title: "The best Organic Products Online",
-          description: "Try it!",
+         
           image: "./public/images/allveg.png",
           color: "#E7EAF3",
           buttonColor: "#FDC040",
           url: "https://www.google.com",
         },
       ],
+
+      //  promotions: [],
     };
   },
+
+  // async mounted() {
+  //   try {
+  //     const response = await fetch("http://localhost:3000/api/promotions");
+  //     const data = await response.json(); // Parse JSON data
+  //     this.promotions = data; // Assign data to products array
+  //     console.log("Fetched categories:", data);
+  //     alert("Data fetched successfully");
+  //   } catch (error) {
+  //     console.error("Error fetching promotions:", error);
+  //   }
+  // },
 };
 </script>
 

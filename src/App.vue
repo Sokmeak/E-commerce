@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 import ProductCategories from "./Views/ProductCategories.vue";
 import PromotionBanners from "./Views/PromotionBanners.vue";
 
@@ -17,9 +18,12 @@ export default {
     PromotionBanners,
   },
 
+
   data() {
     return {};
   },
+
+ 
 };
 </script>
 
