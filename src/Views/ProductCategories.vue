@@ -2,7 +2,6 @@
   <div class="product-list">
     <ProductCategory
       v-for="(product, index) in products"
-      
       :key="index"
       :name="product.name"
       :productCount="product.productCount"
@@ -18,14 +17,12 @@ export default {
   components: { ProductCategory },
   data() {
     return {
-     
-      products  : [],
+      products: [],
     };
   },
 
-  methods:{
-    fetchProducts(){
-       
+  methods: {
+    fetchProducts() {
       axios
         .get("http://localhost:3000/api/categories")
         .then((response) => {
@@ -36,14 +33,12 @@ export default {
         .catch((error) => {
           console.error("Error fetching data:", error);
         });
-   
-    }
+    },
   },
 
   async mounted() {
     this.fetchProducts();
   },
-  
 };
 </script>
 <style scoped>

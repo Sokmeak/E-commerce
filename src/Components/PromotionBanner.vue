@@ -1,5 +1,13 @@
 <template>
-  <div :style="{ backgroundColor: color }" class="promotion-banner">
+  <div
+    @mouseover="isHovered = true"
+    @mouseleave="isHovered = false"
+    :style="{
+      hoverStyles,
+      backgroundColor: color,
+      border: isHovered ? `2px solid blue` : '',
+    }"
+    class="promotion-banner">
     <div class="Banner-content">
       <h2>{{ title }}</h2>
       <shop-button :bg-btn-color="buttonColor" :message="title" />
@@ -28,6 +36,12 @@ export default {
     shopNow() {
       alert("Redirecting to shop!");
     },
+
+  },
+  data(){
+    return{
+      isHovered : false,
+    }
   },
 };
 </script>
@@ -51,6 +65,7 @@ export default {
   background-color: #f9f9f9;
   border-radius: 8px;
   margin: 10px;
+  transition: all 0.1s ease-in;
 }
 
 .bannerImg {

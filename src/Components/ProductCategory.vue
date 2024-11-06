@@ -1,10 +1,16 @@
 <template>
-  <div  :style = "{backgroundColor: color} " class="product-category">
-    <img :src="image" :alt="name" class="product-image" @mouseenter="HoverMouse" />
+  <div
+    @mouseover="isHovered = true"
+    @mouseleave="isHovered = false"
+    :style="{
+      hoverStyles,
+      backgroundColor: color ,
+      border: isHovered ? `2px solid gray` : ''
+    }"
+    class="product-category">
+    <img :src="image" :alt="name" class="product-image" />
     <h3>{{ name }}</h3>
-    <p >
-      {{ productCount }} items
-    </p>
+    <p>{{ productCount }} items</p>
   </div>
 </template>
 
@@ -15,20 +21,19 @@ export default {
     productCount: Number,
     image: String,
     color: String,
-    borderColor: String,
   },
-  methods:{
-    HoverMouse(){
-      // scale images and show it border...
-    }
-  }
 
- 
+  data() {
+    return {
+      isHovered: false,
+    };
+  },
+  
+  
 };
 </script>
 <style scoped>
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..1000&display=swap");
 
 .product-category {
   display: flex;
@@ -44,16 +49,16 @@ export default {
   border-radius: 10px;
   margin: 10px;
   cursor: pointer;
+  transition: all 0.3 ease;
+
 }
 .product-category p {
   font-weight: 400;
   color: gray;
 }
 .product-image {
- 
   width: 100px;
   height: 100px;
   margin: 0.5rem;
-  
 }
 </style>
