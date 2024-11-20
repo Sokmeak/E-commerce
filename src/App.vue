@@ -2,6 +2,13 @@
   <div>
     <product-categories />
     <promotion-banners />
+    <ProductPopular></ProductPopular>
+    <br />
+    <getProductsviaCat></getProductsviaCat>
+    <br />
+    <getProductByGroup></getProductByGroup>
+    <br />
+    <getCategoryByGroup> </getCategoryByGroup>
   </div>
 
   <RouterView />
@@ -10,11 +17,19 @@
 <script>
 import ProductCategories from "./Views/ProductCategories.vue";
 import PromotionBanners from "./Views/PromotionBanners.vue";
+import ProductPopular from "./Views/ProductPopular.vue";
+import getProductsviaCat from "./Views/getProductVaiCategory.vue";
+import getProductByGroup from "./Views/getProductByGroup.vue";
+import getCategoryByGroup from "./Views/getCategoryByGroup.vue";
 
 export default {
   components: {
     ProductCategories,
     PromotionBanners,
+    ProductPopular,
+    getProductsviaCat,
+    getProductByGroup,
+    getCategoryByGroup,
   },
 
   data() {

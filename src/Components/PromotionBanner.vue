@@ -13,7 +13,10 @@
       <shop-button :bg-btn-color="buttonColor" :message="title" />
     </div>
     <div class="bannerImg">
-      <img :src="image" :alt="title" class="banner-image" />
+      <img
+        :src="'http://localhost:3000/' + image"
+        :alt="title"
+        class="banner-image" />
     </div>
   </div>
 </template>
@@ -32,16 +35,11 @@ export default {
     buttonColor: String,
     url: String,
   },
-  method: {
-    shopNow() {
-      alert("Redirecting to shop!");
-    },
 
-  },
-  data(){
-    return{
-      isHovered : false,
-    }
+  data() {
+    return {
+      isHovered: false,
+    };
   },
 };
 </script>

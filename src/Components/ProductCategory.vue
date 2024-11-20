@@ -4,11 +4,14 @@
     @mouseleave="isHovered = false"
     :style="{
       hoverStyles,
-      backgroundColor: color ,
-      border: isHovered ? `2px solid gray` : ''
+      backgroundColor: color,
+      border: isHovered ? `2px solid gray` : '',
     }"
     class="product-category">
-    <img :src="image" :alt="name" class="product-image" />
+    <img
+      :src="'http://localhost:3000/' + image"
+      :alt="name"
+      class="product-image" />
     <h3>{{ name }}</h3>
     <p>{{ productCount }} items</p>
   </div>
@@ -28,8 +31,6 @@ export default {
       isHovered: false,
     };
   },
-  
-  
 };
 </script>
 <style scoped>
@@ -50,7 +51,6 @@ export default {
   margin: 10px;
   cursor: pointer;
   transition: all 0.3 ease;
-
 }
 .product-category p {
   font-weight: 400;
