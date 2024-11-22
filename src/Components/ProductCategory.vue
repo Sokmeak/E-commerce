@@ -1,11 +1,7 @@
 <template>
   <div
-    @mouseover="isHovered = true"
-    @mouseleave="isHovered = false"
     :style="{
-      hoverStyles,
       backgroundColor: color,
-      border: isHovered ? `2px solid gray` : '',
     }"
     class="product-category">
     <img
@@ -60,5 +56,10 @@ export default {
   width: 100px;
   height: 100px;
   margin: 0.5rem;
+}
+.product-category:hover {
+  border: 2px solid rgb(142, 219, 152);
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 </style>

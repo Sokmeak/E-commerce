@@ -1,11 +1,7 @@
 <template>
   <div
-    @mouseover="isHovered = true"
-    @mouseleave="isHovered = false"
     :style="{
-      hoverStyles,
       backgroundColor: color,
-      border: isHovered ? `2px solid blue` : '',
     }"
     class="promotion-banner">
     <div class="Banner-content">
@@ -80,6 +76,11 @@ export default {
 }
 .banner-content {
   flex: 1;
+}
+.promotion-banner:hover {
+  border: 2px solid rgb(142, 219, 152);
+  transform: scale(1.05);
+  transition: 0.2s;
 }
 
 button {

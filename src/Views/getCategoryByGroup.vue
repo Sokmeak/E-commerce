@@ -4,7 +4,7 @@
     <ul>
       <!-- Loop through products with group = fruits -->
       <li v-for="product in getCategoryByGroup" :key="product.id">
-        {{ product.name }} - Price: {{ product.productCount }}
+        {{ product.name }} - product count: {{ product.productCount }}
       </li>
     </ul>
   </div>
