@@ -3,7 +3,8 @@
     :style="{
       backgroundColor: color,
     }"
-    class="promotion-banner">
+    class="promotion-banner"
+  >
     <div class="Banner-content">
       <h2>{{ title }}</h2>
       <shop-button :bg-btn-color="buttonColor" :message="title" />
@@ -12,7 +13,8 @@
       <img
         :src="'http://localhost:3000/' + image"
         :alt="title"
-        class="banner-image" />
+        class="banner-image"
+      />
     </div>
   </div>
 </template>
@@ -46,16 +48,16 @@ export default {
   height: 60%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.9rem;
   justify-content: space-between;
 }
 .promotion-banner {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 500px;
-  height: 300px;
-  padding: 20px;
+  width: 28rem;
+  height: 18rem;
+  padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
   margin: 10px;
@@ -87,7 +89,7 @@ button {
   width: 50%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
   justify-items: center;
   padding: 8px 16px;
   color: white;

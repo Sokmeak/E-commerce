@@ -6,7 +6,8 @@
       :name="product.name"
       :productCount="product.productCount"
       :image="product.image"
-      :color="product.color" />
+      :color="product.color"
+    />
   </div>
 </template>
 <script>
@@ -86,15 +87,14 @@ export default {
 .product-list {
   display: flex;
   flex-direction: row;
+  row-gap: 1rem;
   flex-wrap: wrap;
   width: 100vw;
-  /* padding: 20px; */
-  /* background-color: #333; */
 }
 .product-image {
-  width: 90px;
-  height: 90px;
+  width: 3rem;
+  height: 3rem;
   object-fit: cover;
-  margin-bottom: 8px;
+  margin-bottom: 0.2rem;
 }
 </style>

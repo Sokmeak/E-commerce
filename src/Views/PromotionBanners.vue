@@ -53,5 +53,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 0.5rem;
 }
 </style>

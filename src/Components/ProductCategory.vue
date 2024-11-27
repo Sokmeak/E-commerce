@@ -3,12 +3,14 @@
     :style="{
       backgroundColor: color,
     }"
-    class="product-category">
+    class="product-category"
+  >
     <img
       :src="'http://localhost:3000/' + image"
       :alt="name"
-      class="product-image" />
-    <h3>{{ name }}</h3>
+      class="product-image"
+    />
+    <h4>{{ name }}</h4>
     <p>{{ productCount }} items</p>
   </div>
 </template>
@@ -40,11 +42,10 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 140px;
-  padding: 10px;
+  width: 6.8rem;
+  padding: 0.8rem;
   background-color: #f0f2f5;
-  border-radius: 10px;
-  margin: 10px;
+  border-radius: 1rem;
   cursor: pointer;
   transition: all 0.3 ease;
 }
@@ -53,9 +54,9 @@ export default {
   color: gray;
 }
 .product-image {
-  width: 100px;
-  height: 100px;
-  margin: 0.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0.1rem;
 }
 .product-category:hover {
   border: 2px solid rgb(142, 219, 152);

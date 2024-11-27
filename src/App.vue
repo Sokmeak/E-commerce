@@ -2,8 +2,12 @@
   <div>
     <product-categories />
     <promotion-banners />
+
+    <h1>Testing Getter functions</h1>
+
     <ProductPopular></ProductPopular>
     <br />
+
     <getProductsviaCat></getProductsviaCat>
     <br />
     <getProductByGroup></getProductByGroup>
