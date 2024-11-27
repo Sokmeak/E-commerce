@@ -90,6 +90,7 @@ export default {
   row-gap: 1rem;
   flex-wrap: wrap;
   width: 100vw;
+  height: auto;
 }
 .product-image {
   width: 3rem;

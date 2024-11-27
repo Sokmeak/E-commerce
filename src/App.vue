@@ -1,10 +1,10 @@
 <template>
   <div>
+    <Menu classify="Featured Categories"></Menu>
     <product-categories />
     <promotion-banners />
 
-    <h1>Testing Getter functions</h1>
-
+    <Menu classify="Popular products"></Menu>
     <ProductPopular></ProductPopular>
     <br />
 
@@ -25,6 +25,7 @@ import ProductPopular from "./Views/ProductPopular.vue";
 import getProductsviaCat from "./Views/getProductVaiCategory.vue";
 import getProductByGroup from "./Views/getProductByGroup.vue";
 import getCategoryByGroup from "./Views/getCategoryByGroup.vue";
+import Menu from "./Components/Menu.vue";
 
 export default {
   components: {
@@ -34,6 +35,7 @@ export default {
     getProductsviaCat,
     getProductByGroup,
     getCategoryByGroup,
+    Menu,
   },
 
   data() {
@@ -46,6 +48,7 @@ export default {
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
   color: black;
 }
