@@ -9,6 +9,17 @@ const router = createRouter({
       name: "home",
       component: HomeVue,
     },
+
+    {
+      path: "/categories/:categoryID",
+      name: "Categories",
+      component: () => import("@/Components/ProductCategories.vue"),
+    },
+    {
+      path: "/products/:productID",
+      name: "Products",
+      component: () => import("@/Components/getProductByGroup.vue"),
+    },
   ],
 });
 

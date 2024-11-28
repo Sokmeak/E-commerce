@@ -18,8 +18,9 @@ export default {
 * {
   margin: 0;
   padding: 0;
-
+  border: 2px solid;
   box-sizing: border-box;
+
   color: black;
 }
 

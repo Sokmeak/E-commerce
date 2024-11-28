@@ -43,7 +43,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 6.8rem;
-  padding: 0.8rem;
+  padding: 0.6rem;
   background-color: #f0f2f5;
   border-radius: 1rem;
   cursor: pointer;

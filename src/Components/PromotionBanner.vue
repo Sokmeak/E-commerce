@@ -60,7 +60,7 @@ export default {
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  margin: 10px;
+  margin: 5px;
   transition: all 0.1s ease-in;
 }
 
