@@ -26,10 +26,8 @@ export default {
     return { stores };
   },
   data() {
-    //   return {
-    //     products: [],
-    //   };
-    // },
+     
+  
     // methods: {
     //   fetchProducts() {
     //     axios
@@ -46,7 +44,7 @@ export default {
   },
   async mounted() {
     this.stores.fetchCategory();
-    this.stores.fetchGroup();
+    
     this.stores.fetchProduct();
     // Test getter here
 

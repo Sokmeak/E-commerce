@@ -1,10 +1,11 @@
 <template>
   <div>
-    <Menu classify="Featured Categories"></Menu>
+    <Menu classify="Featured Categories" :Listbar="stores.groups"></Menu>
+
     <product-categories />
     <promotion-banners />
 
-    <Menu classify="Popular products"></Menu>
+    <Menu classify="Popular products" :Listbar="stores.groups"></Menu>
 
     <Products></Products>
     <ProductPopular></ProductPopular>
@@ -26,8 +27,15 @@ import getProductByGroup from "../Components/getProductByGroup.vue";
 import getCategoryByGroup from "../Components/getCategoryByGroup.vue";
 import Menu from "../Components/Menu.vue";
 import Products from "@/Views/Products.vue";
+import { useProductStore } from "@/stores/product";
 
 export default {
+  setup() {
+    const stores = useProductStore();
+
+    return { stores };
+  },
+
   components: {
     ProductCategories,
     PromotionBanners,
@@ -37,6 +45,9 @@ export default {
     getCategoryByGroup,
     Menu,
     Products,
+  },
+  mounted() {
+    this.stores.fetchGroup();
   },
 };
 </script>
