@@ -60,7 +60,7 @@ export default {
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
-  margin: 10px;
+  margin: 5px;
   transition: all 0.1s ease-in;
 }
 
@@ -81,7 +81,7 @@ export default {
 }
 .promotion-banner:hover {
   border: 2px solid rgb(142, 219, 152);
-  transform: scale(1.05);
+  transform: scale(1.02111);
   transition: 0.2s;
 }
 

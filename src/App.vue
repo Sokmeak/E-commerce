@@ -1,41 +1,14 @@
 <template>
-  <div>
-    <Menu classify="Featured Categories"></Menu>
-    <product-categories />
-    <promotion-banners />
-
-    <Menu classify="Popular products"></Menu>
-    <ProductPopular></ProductPopular>
-    <br />
-
-    <getProductsviaCat></getProductsviaCat>
-    <br />
-    <getProductByGroup></getProductByGroup>
-    <br />
-    <getCategoryByGroup> </getCategoryByGroup>
-  </div>
-
   <RouterView />
 </template>
 
 <script>
-import ProductCategories from "./Views/ProductCategories.vue";
-import PromotionBanners from "./Views/PromotionBanners.vue";
-import ProductPopular from "./Views/ProductPopular.vue";
-import getProductsviaCat from "./Views/getProductVaiCategory.vue";
-import getProductByGroup from "./Views/getProductByGroup.vue";
-import getCategoryByGroup from "./Views/getCategoryByGroup.vue";
-import Menu from "./Components/Menu.vue";
+import HomeVue from "./Views/HomeVue.vue";
+import { RouterView } from "vue-router";
 
 export default {
   components: {
-    ProductCategories,
-    PromotionBanners,
-    ProductPopular,
-    getProductsviaCat,
-    getProductByGroup,
-    getCategoryByGroup,
-    Menu,
+    HomeVue,
   },
 
   data() {
@@ -48,15 +21,12 @@ export default {
 * {
   margin: 0;
   padding: 0;
-
+  border: 2px solid;
   box-sizing: border-box;
+
   color: black;
 }
-div {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+
 html {
   background-color: rgb(255, 255, 255);
 }

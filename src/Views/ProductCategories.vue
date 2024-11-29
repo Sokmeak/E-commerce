@@ -13,7 +13,7 @@
 <script>
 import { useProductStore } from "@/stores/product";
 
-import ProductCategory from "@/Components/ProductCategory.vue";
+import ProductCategory from "../Components/ProductCategory.vue";
 
 export default {
   components: { ProductCategory },
@@ -89,7 +89,7 @@ export default {
   flex-direction: row;
   row-gap: 1rem;
   flex-wrap: wrap;
-  width: 100vw;
+  /* width: 100vw; */
   height: auto;
 }
 .product-image {

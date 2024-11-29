@@ -6,14 +6,15 @@
       :title="promote.title"
       :image="promote.image"
       :color="promote.color"
-      :buttonColor="promote.buttonColor" />
+      :buttonColor="promote.buttonColor"
+    />
   </div>
 </template>
 
 <script>
 import { useProductStore } from "@/stores/product";
 
-import PromotionBanner from "@/Components/PromotionBanner.vue";
+import PromotionBanner from "../Components/PromotionBanner.vue";
 export default {
   components: { PromotionBanner },
   setup() {
