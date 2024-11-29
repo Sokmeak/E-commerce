@@ -3,10 +3,13 @@
 </template>
 
 <script>
+import HomeVue from "./Views/HomeVue.vue";
 import { RouterView } from "vue-router";
 
 export default {
-  components: {},
+  components: {
+    HomeVue,
+  },
 
   data() {
     return {};
