@@ -1,12 +1,9 @@
 <template>
   <div>
-    <!-- <Menu classify="Featured Categories" :Listbar="stores.groups"></Menu> -->
-
+  
     <product-categories />
     <promotion-banners />
-    <!-- 
-    <Menu classify="Popular products" :Listbar="stores.groups"></Menu> -->
-
+  
     <Products></Products>
   </div>
 </template>
