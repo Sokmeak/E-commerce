@@ -27,20 +27,7 @@ export default {
     // };
   },
 
-  // methods: {
-  //   fetchPromotion() {
-  //     axios
-  //       .get("http://localhost:3000/api/promotions")
-  //       .then((response) => {
-  //         console.log(response.data); // Access the data
-
-  //         this.promotions = response.data;
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error fetching data:", error);
-  //       });
-  //   },
-  // },
+  
 
   async mounted() {
     this.stores.fetchPromotion();

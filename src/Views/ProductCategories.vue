@@ -64,39 +64,12 @@ export default {
     this.stores.fetchCategory();
     this.stores.fetchGroup();
 
-    // this.stores.fetchProduct();
-    // Test getter here
-
-    // console.log(this.stores.categories);
-
-    // console.log(
-    //   "Categories in 'fruits' group:",
-    //   this.stores.getCategoriesByGroup("fruits")
-    // );
-
-    // Test `getCategoriesByGroup`
-    // const categoriesByGroup = this.stores.getCategoriesByGroup("fruits");
-    // try {
-    //   const categoriesByGroup = this.stores.getCategoriesByGroup("fruits");
-    //   console.log("Categories in 'fruits' group:", categoriesByGroup);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    // // Test `getProductsByGroup`
-    // const productsByGroup = this.stores.getProductsByGroup("fruits");
-    // console.log("Products in 'fruits' group:", productsByGroup);
-
-    // // Test `getProductsByCategory`
-
     try {
       console.log("product is popular" + this.stores.getPopularProducts);
     } catch (error) {
       console.log(error);
     }
 
-    // // Test `getPopularProducts`
-    // const popularProducts = this.stores.getPopularProducts;
-    // console.log("Popular products:", popularProducts);
   },
 };
 </script>
