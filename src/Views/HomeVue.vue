@@ -1,20 +1,13 @@
 <template>
   <div>
-    <Menu classify="Featured Categories" :Listbar="stores.groups"></Menu>
+    <!-- <Menu classify="Featured Categories" :Listbar="stores.groups"></Menu> -->
 
     <product-categories />
     <promotion-banners />
-
-    <Menu classify="Popular products" :Listbar="stores.groups"></Menu>
+    <!-- 
+    <Menu classify="Popular products" :Listbar="stores.groups"></Menu> -->
 
     <Products></Products>
-    <ProductPopular></ProductPopular>
-
-    <getProductsviaCat></getProductsviaCat>
-
-    <getProductByGroup></getProductByGroup>
-
-    <getCategoryByGroup> </getCategoryByGroup>
   </div>
 </template>
 

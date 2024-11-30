@@ -159,7 +159,7 @@ export default {
   flex-direction: column;
   align-items: center; */
   border: 1px solid green;
-  width: 17rem;
+  width: 18.2rem;
   height: auto;
   border-radius: 1rem;
   overflow: hidden;
@@ -217,7 +217,7 @@ img {
 }
 
 .product-content {
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;

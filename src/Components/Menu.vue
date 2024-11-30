@@ -10,20 +10,20 @@
       <a href="#">Vegetables</a>
       <a href="#">Fruits</a> -->
 
-      <template v-for="(nav, index) in computedListbar" :key="index">
+      <template v-for="nav in computedListbar" :key="nav">
         <ul
           @click.prevent="setCurrentNav(nav)"
           :class="[activeTab === nav ? 'bold' : 'regular']"
         >
-          {{ nav }}
+          {{
+            nav
+          }}
         </ul>
       </template>
     </div>
   </nav>
 </template>
 <script>
-import { computed } from "vue";
-
 export default {
   props: {
     classify: String,
@@ -56,8 +56,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 100px;
-  padding-right: 100px;
   align-content: center;
 }
 .product-classify {
@@ -65,7 +63,12 @@ export default {
   align-items: center;
   gap: 2rem;
 }
-
+ul {
+  cursor: pointer;
+}
+ul:hover {
+  color: gray;
+}
 /* ul {
   display: flex;
   flex-direction: row;

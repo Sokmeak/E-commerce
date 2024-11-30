@@ -1,22 +1,33 @@
 <template>
-  <div class="product-list">
-    <ProductCategory
-      v-for="(product, index) in stores.categories"
-      :key="index"
-      :name="product.name"
-      :productCount="product.productCount"
-      :image="product.image"
-      :color="product.color"
-    />
+  <div class="categories-withNavbar">
+    <Menu
+      classify="Featured Categories"
+      :Listbar="stores.groups"
+      @changeBar="updateCurrentGroup"
+    ></Menu>
+
+    <div class="product-list">
+      <ProductCategory
+        v-for="(product, index) in filterCategories"
+        :key="index"
+        :name="product.name"
+        :productCount="product.productCount"
+        :image="product.image"
+        :color="product.color"
+      />
+    </div>
   </div>
 </template>
 <script>
 import { useProductStore } from "@/stores/product";
 
 import ProductCategory from "../Components/ProductCategory.vue";
+import Menu from "@/Components/Menu.vue";
+
+import { mapState } from "pinia";
 
 export default {
-  components: { ProductCategory },
+  components: { ProductCategory, Menu },
 
   // run at the first time
 
@@ -26,26 +37,34 @@ export default {
     return { stores };
   },
   data() {
-     
-  
-    // methods: {
-    //   fetchProducts() {
-    //     axios
-    //       .get("http://localhost:3000/api/categories")
-    //       .then((response) => {
-    //         console.log(response.data); // Access the data
-    //         this.products = response.data;
-    //       })
-    //       .catch((error) => {
-    //         console.error("Error fetching data:", error);
-    //       });
-    //   },
-    // },
+    return {
+      currentGroupName: "All", // default group name
+    };
+  },
+  computed: {
+    ...mapState(useProductStore, {
+      groups: "groups",
+      categories: "categories",
+    }),
+    filterCategories() {
+      if (this.currentGroupName === "All") {
+        return this.categories;
+      }
+
+      return this.stores.getCategoriesByGroup(this.currentGroupName);
+    },
+  },
+  methods: {
+    updateCurrentGroup(groupName) {
+      this.currentGroupName = groupName;
+      console.log(groupName);
+    },
   },
   async mounted() {
     this.stores.fetchCategory();
-    
-    this.stores.fetchProduct();
+    this.stores.fetchGroup();
+
+    // this.stores.fetchProduct();
     // Test getter here
 
     // console.log(this.stores.categories);
@@ -82,12 +101,18 @@ export default {
 };
 </script>
 <style scoped>
+.categories-withNavbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .product-list {
   display: flex;
   flex-direction: row;
-  row-gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   /* width: 100vw; */
+
   height: auto;
 }
 .product-image {
