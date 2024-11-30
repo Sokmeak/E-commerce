@@ -44,6 +44,7 @@ export default {
 
   async mounted() {
     this.stores.fetchPromotion();
+    // this.stores.fetchGroup();
     console.log("Promotion from api: " + this.stores.promotions);
   },
 };
@@ -54,6 +55,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 0.5rem;
+  width: 100%;
+  gap: 2rem;
 }
 </style>

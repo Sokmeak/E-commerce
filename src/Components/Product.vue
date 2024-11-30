@@ -56,7 +56,19 @@
           <!-- {{ price }} -->
         </p>
         <div class="add-section">
-          <button class="btn-add" v-on:click="addToCart">Add to Cart</button>
+          <button v-if="ToggleBtn" class="btn-add" v-on:click="toggleToInput">
+            Add <i class="fa-solid fa-plus"></i>
+          </button>
+
+          <input
+            v-else
+            class="input-number"
+            type="number"
+            min="0"
+            v-model.number="inputValue"
+            s
+            v-on:click="handleInputChange"
+          />
         </div>
       </div>
     </div>
@@ -72,6 +84,23 @@ export default {
     rating: Number,
     size: Number,
     price: Number,
+  },
+  data() {
+    return {
+      ToggleBtn: true,
+      inputValue: 0,
+    };
+  },
+
+  methods: {
+    toggleToInput() {
+      this.ToggleBtn = false;
+    },
+    handleInputChange() {
+      if (this.inputValue === 0) {
+        this.ToggleBtn = true;
+      }
+    },
   },
 
   computed: {
@@ -104,11 +133,11 @@ export default {
     },
   },
 
-  methods: {
-    addToCart() {
-      alert(`Added ${this.productName} to the card.`);
-    },
-  },
+  // methods: {
+  //   addToCart() {
+  //     alert(`Added ${this.productName} to the card.`);
+  //   },
+  // },
 };
 </script>
 <style scoped>
@@ -117,13 +146,20 @@ export default {
   margin: 0;
   box-sizing: border-box;
 }
+.input-number {
+  width: 3rem;
+  height: 2rem;
+  font-weight: bold;
+  color: #109641;
+  text-align: center;
+}
 .card {
   /* display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center; */
   border: 1px solid green;
-  width: 17rem;
+  width: 18.2rem;
   height: auto;
   border-radius: 1rem;
   overflow: hidden;
@@ -138,7 +174,9 @@ img {
   width: 17rem;
   height: 10rem;
 }
-
+.number-gram {
+  color: rgb(112, 112, 112);
+}
 .discount {
   display: flex;
   justify-content: center;
@@ -166,6 +204,9 @@ img {
 
   border-radius: 0.5rem;
 }
+.product-group {
+  color: rgb(112, 112, 112);
+}
 
 .product-image-container {
   width: 100%;
@@ -176,7 +217,7 @@ img {
 }
 
 .product-content {
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -218,9 +259,9 @@ img {
   color: #888;
 }
 .after-discount-price {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #36b37e;
 }
 .add-section {
   display: flex;
@@ -233,16 +274,13 @@ img {
   align-items: center;
   gap: 0.3rem;
   padding: 0.5rem 0.8rem;
-  background-color: #12d470;
+  background-color: #99d9b1;
   /* color: #fff; */
   font-size: 1rem;
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-.btn-add:hover {
-  background-color: #2aa672;
 }
 
 .input-number {

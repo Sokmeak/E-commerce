@@ -6,6 +6,7 @@ export const useProductStore = defineStore("product", {
     promotions: [],
     categories: [],
     products: [],
+    currProductGroup: "All",
   }),
   getters: {
     /**
