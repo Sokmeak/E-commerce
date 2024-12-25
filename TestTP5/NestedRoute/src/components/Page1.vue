@@ -15,6 +15,17 @@
       <h1>Welcome to Page 1</h1>
 
         <router-view></router-view>
+        <p v-if="store.messageP2.length>0"> Message from page2 : {{ store.messageP2 }}</p>
+
+        <p v-if="store.messageP3.length>0"> Message from page3 : {{ store.messageP3 }}</p>
+
+        <p>My Message : {{store.messageP1}}</p>
+        <div class="input-field">
+          <label for="input">Message</label>
+          <input v-model="store.messageP1" placeholder="Enter your message" />
+         
+        </div>
+      
      
     </div>
   </div>
@@ -22,18 +33,34 @@
 
 <script>
 import { useRoute } from "vue-router";
+import { useMessageStore } from "@/stores/counter";
 export default {
 
     setup() {
     const route = useRoute();
     const isActive = (path) => route.path === path;
-    return { isActive };
+
+    const store = useMessageStore();
+    return { isActive, store};
+  },
+
+  data() {
+    return {
+      text: "", 
+    };
   },
 
 };
 </script>
 
 <style scoped>
+.input-field {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  
+  align-items: center;
+}
 .active {
   color: red;
   font-weight: bold;
