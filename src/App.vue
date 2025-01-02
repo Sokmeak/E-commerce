@@ -1,4 +1,5 @@
 <template>
+  <!-- <LayoutComponent /> -->
   <RouterView />
 </template>
 
@@ -9,6 +10,7 @@ import { RouterView } from "vue-router";
 export default {
   components: {
     HomeVue,
+ 
   },
 
   data() {
@@ -21,13 +23,13 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  border: 2px solid;
+  font-family: "Quicksand";
   box-sizing: border-box;
-
   color: black;
 }
 
 html {
   background-color: rgb(255, 255, 255);
+  font-family: "Quicksand";
 }
 </style>

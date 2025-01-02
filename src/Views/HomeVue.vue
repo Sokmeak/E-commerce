@@ -1,9 +1,9 @@
 <template>
   <div>
-  
+   
+    <ShowcaseComponent/>
     <product-categories />
     <promotion-banners />
-  
     <Products></Products>
   </div>
 </template>
@@ -18,6 +18,8 @@ import getCategoryByGroup from "../Components/getCategoryByGroup.vue";
 import Menu from "../Components/Menu.vue";
 import Products from "@/Views/Products.vue";
 import { useProductStore } from "@/stores/product";
+import ShowcaseComponent from "@/Components/ShowcaseComponent.vue";
+
 
 export default {
   setup() {
@@ -27,6 +29,8 @@ export default {
   },
 
   components: {
+   
+    ShowcaseComponent,
     ProductCategories,
     PromotionBanners,
     ProductPopular,
@@ -45,7 +49,8 @@ export default {
 div {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  margin:1.5rem
+ 
 }
 </style>

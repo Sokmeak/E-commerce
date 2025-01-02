@@ -80,6 +80,7 @@ export default {
   gap: 1rem;
 }
 .product-list {
+  font-family: "Quicksand";
   display: flex;
   flex-direction: row;
   gap: 1.5rem;

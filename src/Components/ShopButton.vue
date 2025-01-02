@@ -36,6 +36,7 @@ export default {
 
 <style scoped>
 button {
+  font-family: "Quicksand";
   width: 100%;
   display: flex;
   align-items: center;

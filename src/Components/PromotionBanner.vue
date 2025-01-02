@@ -44,6 +44,7 @@ export default {
 
 <style scoped>
 .Banner-content {
+  font-family: "Quicksand";
   width: inherit;
   height: 60%;
   display: flex;

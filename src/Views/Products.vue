@@ -72,6 +72,7 @@ export default {
 </script>
 <style scoped>
 .product-lists {
+  font-family: "Quicksand";
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

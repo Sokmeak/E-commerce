@@ -53,6 +53,7 @@ export default {
 
 <style scoped>
 .nav-bar {
+  font-family: "Quicksand";
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -61,6 +62,7 @@ export default {
 .product-classify {
   display: flex;
   align-items: center;
+  margin-right: 3rem;
   gap: 2rem;
 }
 ul {
