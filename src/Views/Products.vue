@@ -9,8 +9,9 @@
       <Product
         v-for="(product, index) in filterProducts"
         :key="index"
+        :productId="product.id"
         :promotionAsPercentage="product.promotionAsPercentage"
-        :image="product.image"
+        :images="product.image"
         :productGroup="product.group"
         :productName="product.name"
         :rating="product.rating"

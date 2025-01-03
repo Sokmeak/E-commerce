@@ -21,7 +21,7 @@ const router = createRouter({
         {
           path: "/categories/:categoryId",
           name: "category",
-          component:ProductCategories,
+          component:() => import("@/Views/CategoryView.vue"),
           props: true,
         },
         {
@@ -29,7 +29,7 @@ const router = createRouter({
           // How to get the product details from the clicked product?
           path: "/products/:productId",
           name: "product",
-          component: Products,
+          component: () => import("@/Views/ProductView.vue"),
           props: true,
         }
       ]

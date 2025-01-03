@@ -1,88 +1,92 @@
 <template>
-  <div class="card">
-    <p
-      class="discount"
-      v-if="promotionAsPercentage > 0"
-      :style="{ backgroundColor: changeColor }"
-    >
-      <span class="number-discount">{{ changeValue }}</span>
-    </p>
-    <div class="product-image-container">
-      <img
-        :src="'http://localhost:3000/' + image"
-        alt="Product Image"
-        class="product-image"
-      />
-    </div>
-
-    <div class="product-content">
-      <label class="product-group">
-        {{ productGroup }}
-      </label>
-
-      <h3>{{ productName }}</h3>
-
-      <div class="star-rate">
-        <div class="stars">
-          <img
-            v-for="n in fullStars"
-            :key="'full-' + n"
-            src="../../public/images/filledStar.png"
-            alt="Filled Star"
-          />
-          <img
-            v-for="n in emptyStars"
-            :key="'empty-' + n"
-            src="../../public/images/empty-star.png"
-            alt="Empty Star"
-          />
-        </div>
-        <p class="rate">
-          (<span>{{ rating }}</span
-          >)
-        </p>
-      </div>
-
-      <p class="product-size">
-        <span class="number-gram">{{ size }}g</span>
+  <router-link :to="`/products/${productId}`" class="card-link">
+    <div class="card">
+      <p
+        class="discount"
+        v-if="promotionAsPercentage > 0"
+        :style="{ backgroundColor: changeColor }"
+      >
+        <span class="number-discount">{{ changeValue }}</span>
       </p>
+      <div class="product-image-container">
+        <img
+          :src="'http://localhost:3000/' + images"
+          alt="Product Image"
+          class="product-image"
+        />
+      </div>
 
-      <div class="choose">
-        <p class="price">
-          <span class="after-discount-price"> $ {{ discountedPrice }} </span>
-          <span v-if="promotionAsPercentage > 0" class="discount-price"
-            >${{ price }}
-          </span>
-          <!-- {{ price }} -->
+      <div class="product-content">
+        <label class="product-group">
+          {{ productGroup }}
+        </label>
+
+        <h3>{{ productName }}</h3>
+
+        <div class="star-rate">
+          <div class="stars">
+            <img
+              v-for="n in fullStars"
+              :key="'full-' + n"
+              src="../../public/images/filledStar.png"
+              alt="Filled Star"
+            />
+            <img
+              v-for="n in emptyStars"
+              :key="'empty-' + n"
+              src="../../public/images/empty-star.png"
+              alt="Empty Star"
+            />
+          </div>
+          <p class="rate">
+            (<span>{{ rating }}</span
+            >)
+          </p>
+        </div>
+
+        <p class="product-size">
+          <span class="number-gram">{{ size }}g</span>
         </p>
-        <div class="add-section">
-          <button v-if="ToggleBtn" class="btn-add" v-on:click="toggleToInput">
-            Add <i class="fa-solid fa-plus"></i>
-          </button>
 
-          <input
-            v-else
-            class="input-number"
-            type="number"
-            min="0"
-            v-model.number="inputValue"
-            s
-            v-on:click="handleInputChange"
-          />
+        <div class="choose">
+          <p class="price">
+            <span class="after-discount-price"> $ {{ discountedPrice }} </span>
+            <span v-if="promotionAsPercentage > 0" class="discount-price"
+              >${{ price }}
+            </span>
+            <!-- {{ price }} -->
+          </p>
+          <div class="add-section">
+            <button v-if="ToggleBtn" class="btn-add" v-on:click="toggleToInput">
+              Add <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <input
+              v-else
+              class="input-number"
+              type="number"
+              min="0"
+              v-model.number="inputValue"
+              s
+              v-on:click="handleInputChange"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 <script>
 export default {
   props: {
+    productId: Number,
     promotionAsPercentage: Number,
-    image: String,
+    images: String,
     productGroup: String,
     productName: String,
     rating: Number,
     size: Number,
+    instock: Number,
     price: Number,
   },
   data() {
@@ -141,6 +145,10 @@ export default {
 };
 </script>
 <style scoped>
+.card-link {
+  text-decoration: none; /* Remove underline for links */
+  color: inherit; /* Ensure text color stays the same */
+}
 * {
   padding: 0;
   margin: 0;

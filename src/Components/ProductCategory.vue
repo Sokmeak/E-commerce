@@ -1,4 +1,6 @@
 <template>
+
+<router-link :to="`/categories/${categoryId}`" class="card-link">
   <div
     :style="{
       backgroundColor: color,
@@ -13,6 +15,8 @@
     <h4>{{ name }}</h4>
     <p>{{ productCount }} items</p>
   </div>
+
+</router-link>
 </template>
 
 <script>
@@ -22,6 +26,7 @@ export default {
     productCount: Number,
     image: String,
     color: String,
+    categoryId: Number,
   },
 
   data() {
@@ -33,6 +38,11 @@ export default {
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..1000&display=swap");
+
+.card-link {
+  text-decoration: none; /* Remove underline for links */
+  color: inherit; /* Ensure text color stays the same */
+}
 
 .product-category {
   display: flex;

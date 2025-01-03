@@ -14,6 +14,8 @@ export const useProductStore = defineStore("product", {
      * @param {string} groupName
      * @returns {Array} List of categories
      */
+
+  
     getCategoriesByGroup: (state) => {
       return (groupName) => {
         return state.categories.filter(
@@ -61,6 +63,13 @@ export const useProductStore = defineStore("product", {
       // Filter and return products with countSold greater than 10
       return state.products.filter((product) => product.countSold > 10);
     },
+
+
+    // getCategoryById: (state) => {
+    //   return (categoryId) => {
+    //     return state.categories.find((category) => category.id === categoryId);
+    //   };
+    // },
   },
 
   actions: {

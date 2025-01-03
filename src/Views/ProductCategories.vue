@@ -10,6 +10,7 @@
       <ProductCategory
         v-for="(product, index) in filterCategories"
         :key="index"
+        :categoryId="product.id"
         :name="product.name"
         :productCount="product.productCount"
         :image="product.image"
